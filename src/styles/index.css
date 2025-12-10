@@ -1,15 +1,7 @@
-
-
-ul li {
-    border: 1px solid grey;
-    list-style: none;
+.hidden-icon > span {
+    visibility: hidden;
 }
 
-input {
-    border: none;
-    width: 100%;
-}
-
-p {
-    border: 1px solid grey;
+.hidden-icon:hover > span {
+    visibility: visible;
 }

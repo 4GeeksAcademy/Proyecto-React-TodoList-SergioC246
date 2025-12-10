@@ -7,6 +7,7 @@ import "bootstrap"
 
 // index.css'
 import '../styles/index.css'
+import '@fortawesome/fontawesome-free/css/all.min.css';
 
 // components
 import Home from './components/Home';
