@@ -7,8 +7,8 @@ export const ToDoList = () => {
 
   const handleTask = (event) => {setTask(event.target.value)}
 
-  const handleDeleteTask = (deletedTask) => {
-    setListTask(listTask.filter(item => item.id != deletedTask.id))
+  const handleDeleteTask = (indexToDelete) => {
+    setListTask(listTask.filter((_, index) => index !== indexToDelete))
   }
 
   const handleOnSubmit = (event) => {
@@ -41,11 +41,11 @@ export const ToDoList = () => {
         <div className='col-10 col-sm-8 col-md-6 m-auto'>
           <h2 className='text-primary'>List</h2>
           <ul className="list-group">
-            {listTask.map((item) => {
+            {listTask.map((item, index) => {
               return (
-                <li key={item.id} className='hidden-icon list-group-item d-flex justify-content-between'>
+                <li key={index} className='hidden-icon list-group-item d-flex justify-content-between'>
                   {item.todo}
-                  <span onClick={() => handleDeleteTask(item)}>
+                  <span onClick={() => handleDeleteTask(index)}>
                     <i className='fa-solid fa-trash text-danger'></i>
                   </span>
                 </li>
